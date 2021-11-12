@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class LinkForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(event.target.input.value)
+        console.log(event.target.input.value);
+        Meteor.call('links.insert', event.target.input.value);
     }
 
     render() {
