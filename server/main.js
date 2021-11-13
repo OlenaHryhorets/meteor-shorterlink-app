@@ -6,5 +6,7 @@ function insertLink({ title, url }) {
 }
 
 Meteor.startup(() => {
-  
+  Meteor.publish('links', function(limit) {
+    return Links.find({}, {limit: limit});
+  })
 });
