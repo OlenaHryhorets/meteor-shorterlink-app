@@ -17,11 +17,11 @@ class LinkList extends Component {
 
   renderRows() {
     return this.props.links.map( link => {
-        const { url, token, clicks } = link;
+        const { _id, url, token, clicks } = link;
         const shortLink = `http://localhost:3000/${token}`;
 
         return (
-          <tr key={token} id={token}>
+          <tr key={_id}>
             <td>{url}</td>
             <td>
               <a href={shortLink}>{shortLink}</a>
